@@ -1,0 +1,49 @@
+services:
+  db:
+    image: mysql:8.1.0
+    environment:
+      - MYSQL_ROOT_HOST=${DB_ROOT_HOST}
+      - MYSQL_DATABASE=${DB_NAME}
+      - MYSQL_USER=${DB_USER}
+      - MYSQL_PASSWORD=${DB_PASS}
+      - MYSQL_ROOT_PASSWORD=${DB_PASS}
+      - TZ=${TZ}
+    ports:
+      - '3311:3306'
+    volumes:
+      - ./db/conf:/etc/mysql/conf.d/:ro
+      - mysqldata:/var/lib/mysql
+      - ./db/logs:/var/log/mysql
+    networks:
+      - backend
+  nest:
+    image: node:20-buster
+    environment:
+      - MYSQL_SERVER=db
+      - MYSQL_USER=${DB_USER}
+      - MYSQL_PASSWORD=${DB_PASS}
+      - MYSQL_DATABASE=${DB_NAME}
+      - TZ=${TZ}
+      - CHOKIDAR_USEPOLLING=true
+      - NODE_ENV=development
+      - EMAIL_USER=${EMAIL_USER}
+      - EMAIL_PASSWORD=${EMAIL_PASSWORD}
+      - EMAIL_SERVICE=${EMAIL_SERVICE}
+      - EMAIL_BASE_URL=${EMAIL_BASE_URL}
+    tty: true
+    ports:
+      - '3011:3000'
+    volumes:
+      - ./nest:/app
+    working_dir: /app
+    command: npm run start:dev
+    networks:
+      - backend
+    depends_on:
+      - db
+networks:
+  backend:
+
+
+volumes:
+  mysqldata:
