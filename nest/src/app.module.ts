@@ -5,6 +5,8 @@ import { EmailModule } from './email/email.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { User } from './users/entities/user.entity';
 import { LoggerMiddleware } from './logger/logger.middleware';
+import { AuthModule } from './auth/auth.module';
+import { ConfigModule } from '@nestjs/config';
 
 @Module({
   imports: [UsersModule, EmailModule,
@@ -20,6 +22,10 @@ import { LoggerMiddleware } from './logger/logger.middleware';
       migrations: [__dirname + '/**/migrations/*.js'],
       migrationsTableName:'migrations'
     }),
+    AuthModule,
+    ConfigModule.forRoot({
+      isGlobal:true
+    })
   ],
   controllers: [],
   providers: [],

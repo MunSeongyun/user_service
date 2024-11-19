@@ -18,9 +18,12 @@ const users_service_1 = require("./users.service");
 const create_user_dto_1 = require("./dto/create-user.dto");
 const verify_email_dto_1 = require("./dto/verify-email.dto");
 const user_login_dto_1 = require("./dto/user-login.dto");
+const auth_guard_1 = require("../auth/auth.guard");
+const auth_service_1 = require("../auth/auth.service");
 let UsersController = class UsersController {
-    constructor(usersService) {
+    constructor(usersService, authService) {
         this.usersService = usersService;
+        this.authService = authService;
     }
     async createUser(dto) {
         const { name, email, password } = dto;
@@ -34,12 +37,13 @@ let UsersController = class UsersController {
         const { email, password } = dto;
         return await this.usersService.login(email, password);
     }
-    async getUserInfo(userId) {
+    async getUserInfo(headers, userId) {
         return await this.usersService.getUserInfo(userId);
     }
 };
 exports.UsersController = UsersController;
 __decorate([
+    (0, common_1.UseGuards)(auth_guard_1.AuthGuard),
     (0, common_1.Post)(),
     __param(0, (0, common_1.Body)()),
     __metadata("design:type", Function),
@@ -61,14 +65,17 @@ __decorate([
     __metadata("design:returntype", Promise)
 ], UsersController.prototype, "login", null);
 __decorate([
+    (0, common_1.UseGuards)(auth_guard_1.AuthGuard),
     (0, common_1.Get)('/:id'),
-    __param(0, (0, common_1.Param)('id')),
+    __param(0, (0, common_1.Headers)()),
+    __param(1, (0, common_1.Param)('id')),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [String]),
+    __metadata("design:paramtypes", [Object, String]),
     __metadata("design:returntype", Promise)
 ], UsersController.prototype, "getUserInfo", null);
 exports.UsersController = UsersController = __decorate([
     (0, common_1.Controller)('users'),
-    __metadata("design:paramtypes", [users_service_1.UsersService])
+    __metadata("design:paramtypes", [users_service_1.UsersService,
+        auth_service_1.AuthService])
 ], UsersController);
 //# sourceMappingURL=users.controller.js.map

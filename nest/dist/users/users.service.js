@@ -20,11 +20,13 @@ const typeorm_1 = require("@nestjs/typeorm");
 const user_entity_1 = require("./entities/user.entity");
 const typeorm_2 = require("typeorm");
 const ulid_1 = require("ulid");
+const auth_service_1 = require("../auth/auth.service");
 let UsersService = class UsersService {
-    constructor(emailService, usersRepository, dataSource) {
+    constructor(emailService, usersRepository, dataSource, authService) {
         this.emailService = emailService;
         this.usersRepository = usersRepository;
         this.dataSource = dataSource;
+        this.authService = authService;
     }
     async createUser(name, email, password) {
         const userExist = await this.checkUserExists(email);
@@ -58,13 +60,43 @@ let UsersService = class UsersService {
         await this.emailService.sendMemberJoinVerification(email, signupVerifyToken);
     }
     async verifyEmail(signupVerifyToken) {
-        throw new Error('Method not implemented.');
+        const user = await this.usersRepository.findOne({
+            where: { signupVerifyToken }
+        });
+        if (!user) {
+            throw new common_1.NotFoundException('유저가 존재하지 않습니다.');
+        }
+        return await this.authService.login({
+            id: user.id,
+            name: user.name,
+            email: user.email
+        });
     }
     async login(email, password) {
-        throw new Error('Method not implemented.');
+        const user = await this.usersRepository.findOne({
+            where: { email, password }
+        });
+        if (!user) {
+            throw new common_1.NotFoundException('유저가 존재하지 않습니다.');
+        }
+        return await this.authService.login({
+            id: user.id,
+            name: user.name,
+            email: user.email
+        });
     }
     async getUserInfo(userId) {
-        throw new Error('Method not implemented.');
+        const user = await this.usersRepository.findOne({
+            where: { id: userId }
+        });
+        if (!user) {
+            throw new common_1.NotFoundException('유저가 존재하지 않습니다.');
+        }
+        return {
+            id: user.id,
+            name: user.name,
+            email: user.email
+        };
     }
     async saveUserUsingQueryRunner(name, email, password, signupVerifyToken) {
         const queryRunner = this.dataSource.createQueryRunner();
@@ -78,7 +110,6 @@ let UsersService = class UsersService {
             user.password = password;
             user.signupVerifyToken = signupVerifyToken;
             await queryRunner.manager.save(user);
-            throw new common_1.InternalServerErrorException();
             await queryRunner.commitTransaction();
         }
         catch (e) {
@@ -106,6 +137,7 @@ exports.UsersService = UsersService = __decorate([
     __param(1, (0, typeorm_1.InjectRepository)(user_entity_1.User)),
     __metadata("design:paramtypes", [email_service_1.EmailService,
         typeorm_2.Repository,
-        typeorm_2.DataSource])
+        typeorm_2.DataSource,
+        auth_service_1.AuthService])
 ], UsersService);
 //# sourceMappingURL=users.service.js.map

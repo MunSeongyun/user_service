@@ -13,6 +13,8 @@ const email_module_1 = require("./email/email.module");
 const typeorm_1 = require("@nestjs/typeorm");
 const user_entity_1 = require("./users/entities/user.entity");
 const logger_middleware_1 = require("./logger/logger.middleware");
+const auth_module_1 = require("./auth/auth.module");
+const config_1 = require("@nestjs/config");
 let AppModule = class AppModule {
     configure(consumer) {
         consumer
@@ -36,6 +38,10 @@ exports.AppModule = AppModule = __decorate([
                 migrations: [__dirname + '/**/migrations/*.js'],
                 migrationsTableName: 'migrations'
             }),
+            auth_module_1.AuthModule,
+            config_1.ConfigModule.forRoot({
+                isGlobal: true
+            })
         ],
         controllers: [],
         providers: [],
