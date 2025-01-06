@@ -14,6 +14,7 @@ import { TerminusModule } from '@nestjs/terminus';
 import { HttpModule } from '@nestjs/axios';
 import { HealthCheckService } from './health-check/health-check.service';
 import { DogHealthIndicator } from './health-check/dog.health';
+import { Dog } from './health-check/dog.entity';
 
 @Module({
   imports: [UsersModule, EmailModule,
@@ -24,8 +25,8 @@ import { DogHealthIndicator } from './health-check/dog.health';
       username: process.env.MYSQL_USER,
       password: process.env.MYSQL_PASSWORD,
       database: process.env.MYSQL_DATABASE,
-      entities: [User],
-      synchronize: false,
+      entities: [User,Dog],
+      synchronize: true,
       migrations: [__dirname + '/**/migrations/*.js'],
       migrationsTableName:'migrations'
     }),
