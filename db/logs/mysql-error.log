@@ -475,3 +475,58 @@
 2025-01-06T15:31:46.094269+09:00 38 [Warning] [MY-013360] [Server] Plugin mysql_native_password reported: ''mysql_native_password' is deprecated and will be removed in a future release. Please use caching_sha2_password instead'
 2025-01-06T15:32:05.613580+09:00 39 [Warning] [MY-013360] [Server] Plugin mysql_native_password reported: ''mysql_native_password' is deprecated and will be removed in a future release. Please use caching_sha2_password instead'
 2025-01-06T15:32:10.378746+09:00 40 [Warning] [MY-013360] [Server] Plugin mysql_native_password reported: ''mysql_native_password' is deprecated and will be removed in a future release. Please use caching_sha2_password instead'
+2025-01-06T16:06:18.716519+09:00 0 [System] [MY-013172] [Server] Received SHUTDOWN from user <via user signal>. Shutting down mysqld (Version: 8.1.0).
+2025-01-06T16:06:19.639838+09:00 0 [System] [MY-010910] [Server] /usr/sbin/mysqld: Shutdown complete (mysqld 8.1.0)  MySQL Community Server - GPL.
+2025-01-06T16:06:19.678265+09:00 0 [System] [MY-015016] [Server] MySQL Server - end.
+2025-01-06T16:12:23.285470+09:00 0 [System] [MY-015015] [Server] MySQL Server - start.
+2025-01-06T16:12:23.494981+09:00 0 [Warning] [MY-011068] [Server] The syntax '--skip-host-cache' is deprecated and will be removed in a future release. Please use SET GLOBAL host_cache_size=0 instead.
+2025-01-06T16:12:23.495759+09:00 0 [Warning] [MY-010918] [Server] 'default_authentication_plugin' is deprecated and will be removed in a future release. Please use authentication_policy instead.
+2025-01-06T16:12:23.497154+09:00 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.1.0) starting as process 1
+2025-01-06T16:12:23.505622+09:00 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2025-01-06T16:12:23.604784+09:00 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2025-01-06T16:12:23.779415+09:00 0 [Warning] [MY-010068] [Server] CA certificate ca.pem is self signed.
+2025-01-06T16:12:23.779453+09:00 0 [System] [MY-013602] [Server] Channel mysql_main configured to support TLS. Encrypted connections are now supported for this channel.
+2025-01-06T16:12:23.780590+09:00 0 [Warning] [MY-011810] [Server] Insecure configuration for --pid-file: Location '/var/run/mysqld' in the path is accessible to all OS users. Consider choosing a different directory.
+2025-01-06T16:12:23.799452+09:00 0 [System] [MY-011323] [Server] X Plugin ready for connections. Bind-address: '::' port: 33060, socket: /var/run/mysqld/mysqlx.sock
+2025-01-06T16:12:23.799506+09:00 0 [System] [MY-010931] [Server] /usr/sbin/mysqld: ready for connections. Version: '8.1.0'  socket: '/var/run/mysqld/mysqld.sock'  port: 3306  MySQL Community Server - GPL.
+2025-01-06T16:32:25.220852+09:00 0 [System] [MY-013172] [Server] Received SHUTDOWN from user <via user signal>. Shutting down mysqld (Version: 8.1.0).
+2025-01-06T16:32:26.707289+09:00 0 [System] [MY-010910] [Server] /usr/sbin/mysqld: Shutdown complete (mysqld 8.1.0)  MySQL Community Server - GPL.
+2025-01-06T16:32:26.709602+09:00 0 [System] [MY-015016] [Server] MySQL Server - end.
+2025-01-06T16:40:23.989028+09:00 0 [System] [MY-015015] [Server] MySQL Server - start.
+2025-01-06T16:40:24.169595+09:00 0 [Warning] [MY-011068] [Server] The syntax '--skip-host-cache' is deprecated and will be removed in a future release. Please use SET GLOBAL host_cache_size=0 instead.
+2025-01-06T16:40:24.170448+09:00 0 [Warning] [MY-010918] [Server] 'default_authentication_plugin' is deprecated and will be removed in a future release. Please use authentication_policy instead.
+2025-01-06T16:40:24.170465+09:00 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.1.0) starting as process 1
+2025-01-06T16:40:24.180126+09:00 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2025-01-06T16:40:24.267544+09:00 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2025-01-06T16:40:24.368179+09:00 0 [Warning] [MY-010068] [Server] CA certificate ca.pem is self signed.
+2025-01-06T16:40:24.368219+09:00 0 [System] [MY-013602] [Server] Channel mysql_main configured to support TLS. Encrypted connections are now supported for this channel.
+2025-01-06T16:40:24.369530+09:00 0 [Warning] [MY-011810] [Server] Insecure configuration for --pid-file: Location '/var/run/mysqld' in the path is accessible to all OS users. Consider choosing a different directory.
+2025-01-06T16:40:24.385552+09:00 0 [System] [MY-011323] [Server] X Plugin ready for connections. Bind-address: '::' port: 33060, socket: /var/run/mysqld/mysqlx.sock
+2025-01-06T16:40:24.385577+09:00 0 [System] [MY-010931] [Server] /usr/sbin/mysqld: ready for connections. Version: '8.1.0'  socket: '/var/run/mysqld/mysqld.sock'  port: 3306  MySQL Community Server - GPL.
+2025-01-06T16:44:06.417189+09:00 0 [System] [MY-013172] [Server] Received SHUTDOWN from user <via user signal>. Shutting down mysqld (Version: 8.1.0).
+2025-01-06T16:44:08.011633+09:00 0 [System] [MY-010910] [Server] /usr/sbin/mysqld: Shutdown complete (mysqld 8.1.0)  MySQL Community Server - GPL.
+2025-01-06T16:44:08.013306+09:00 0 [System] [MY-015016] [Server] MySQL Server - end.
+2025-01-06T17:03:33.546476+09:00 0 [System] [MY-015015] [Server] MySQL Server - start.
+2025-01-06T17:03:33.735874+09:00 0 [Warning] [MY-011068] [Server] The syntax '--skip-host-cache' is deprecated and will be removed in a future release. Please use SET GLOBAL host_cache_size=0 instead.
+2025-01-06T17:03:33.736997+09:00 0 [Warning] [MY-010918] [Server] 'default_authentication_plugin' is deprecated and will be removed in a future release. Please use authentication_policy instead.
+2025-01-06T17:03:33.737277+09:00 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.1.0) starting as process 1
+2025-01-06T17:03:33.745965+09:00 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2025-01-06T17:03:33.832535+09:00 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2025-01-06T17:03:33.998134+09:00 0 [Warning] [MY-010068] [Server] CA certificate ca.pem is self signed.
+2025-01-06T17:03:33.998171+09:00 0 [System] [MY-013602] [Server] Channel mysql_main configured to support TLS. Encrypted connections are now supported for this channel.
+2025-01-06T17:03:33.999593+09:00 0 [Warning] [MY-011810] [Server] Insecure configuration for --pid-file: Location '/var/run/mysqld' in the path is accessible to all OS users. Consider choosing a different directory.
+2025-01-06T17:03:34.022259+09:00 0 [System] [MY-011323] [Server] X Plugin ready for connections. Bind-address: '::' port: 33060, socket: /var/run/mysqld/mysqlx.sock
+2025-01-06T17:03:34.022305+09:00 0 [System] [MY-010931] [Server] /usr/sbin/mysqld: ready for connections. Version: '8.1.0'  socket: '/var/run/mysqld/mysqld.sock'  port: 3306  MySQL Community Server - GPL.
+2025-01-06T17:03:38.151440+09:00 8 [Warning] [MY-013360] [Server] Plugin mysql_native_password reported: ''mysql_native_password' is deprecated and will be removed in a future release. Please use caching_sha2_password instead'
+2025-01-06T17:20:21.815274+09:00 9 [Warning] [MY-013360] [Server] Plugin mysql_native_password reported: ''mysql_native_password' is deprecated and will be removed in a future release. Please use caching_sha2_password instead'
+2025-01-06T17:21:41.323142+09:00 10 [Warning] [MY-013360] [Server] Plugin mysql_native_password reported: ''mysql_native_password' is deprecated and will be removed in a future release. Please use caching_sha2_password instead'
+2025-01-06T17:22:59.162225+09:00 11 [Warning] [MY-013360] [Server] Plugin mysql_native_password reported: ''mysql_native_password' is deprecated and will be removed in a future release. Please use caching_sha2_password instead'
+2025-01-06T17:23:07.163265+09:00 12 [Warning] [MY-013360] [Server] Plugin mysql_native_password reported: ''mysql_native_password' is deprecated and will be removed in a future release. Please use caching_sha2_password instead'
+2025-01-06T17:23:30.923513+09:00 13 [Warning] [MY-013360] [Server] Plugin mysql_native_password reported: ''mysql_native_password' is deprecated and will be removed in a future release. Please use caching_sha2_password instead'
+2025-01-06T17:23:53.243133+09:00 14 [Warning] [MY-013360] [Server] Plugin mysql_native_password reported: ''mysql_native_password' is deprecated and will be removed in a future release. Please use caching_sha2_password instead'
+2025-01-06T17:23:57.426127+09:00 15 [Warning] [MY-013360] [Server] Plugin mysql_native_password reported: ''mysql_native_password' is deprecated and will be removed in a future release. Please use caching_sha2_password instead'
+2025-01-06T17:24:23.457612+09:00 16 [Warning] [MY-013360] [Server] Plugin mysql_native_password reported: ''mysql_native_password' is deprecated and will be removed in a future release. Please use caching_sha2_password instead'
+2025-01-06T17:25:42.389210+09:00 17 [Warning] [MY-013360] [Server] Plugin mysql_native_password reported: ''mysql_native_password' is deprecated and will be removed in a future release. Please use caching_sha2_password instead'
+2025-01-06T17:26:06.837873+09:00 18 [Warning] [MY-013360] [Server] Plugin mysql_native_password reported: ''mysql_native_password' is deprecated and will be removed in a future release. Please use caching_sha2_password instead'
+2025-01-06T17:27:14.615276+09:00 19 [Warning] [MY-013360] [Server] Plugin mysql_native_password reported: ''mysql_native_password' is deprecated and will be removed in a future release. Please use caching_sha2_password instead'
+2025-01-06T17:27:28.303374+09:00 20 [Warning] [MY-013360] [Server] Plugin mysql_native_password reported: ''mysql_native_password' is deprecated and will be removed in a future release. Please use caching_sha2_password instead'

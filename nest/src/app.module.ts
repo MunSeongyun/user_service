@@ -9,6 +9,11 @@ import { AuthModule } from './auth/auth.module';
 import { ConfigModule } from '@nestjs/config';
 import { BatchModule } from './batch/batch.module';
 import { TaskService } from './task/task.service';
+import { HealthCheckController } from './health-check/health-check.controller';
+import { TerminusModule } from '@nestjs/terminus';
+import { HttpModule } from '@nestjs/axios';
+import { HealthCheckService } from './health-check/health-check.service';
+import { DogHealthIndicator } from './health-check/dog.health';
 
 @Module({
   imports: [UsersModule, EmailModule,
@@ -28,10 +33,12 @@ import { TaskService } from './task/task.service';
     ConfigModule.forRoot({
       isGlobal:true
     }),
-    BatchModule
+    BatchModule,
+    TerminusModule,
+    HttpModule
   ],
-  controllers: [],
-  providers: [],
+  controllers: [HealthCheckController],
+  providers: [HealthCheckService,DogHealthIndicator],
 })
 export class AppModule implements NestModule{
   configure(consumer: MiddlewareConsumer) {
