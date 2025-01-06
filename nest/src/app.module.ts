@@ -7,6 +7,8 @@ import { User } from './users/entities/user.entity';
 import { LoggerMiddleware } from './logger/logger.middleware';
 import { AuthModule } from './auth/auth.module';
 import { ConfigModule } from '@nestjs/config';
+import { BatchModule } from './batch/batch.module';
+import { TaskService } from './task/task.service';
 
 @Module({
   imports: [UsersModule, EmailModule,
@@ -25,10 +27,11 @@ import { ConfigModule } from '@nestjs/config';
     AuthModule,
     ConfigModule.forRoot({
       isGlobal:true
-    })
+    }),
+    BatchModule
   ],
   controllers: [],
-  providers: [],
+  providers: [TaskService],
 })
 export class AppModule implements NestModule{
   configure(consumer: MiddlewareConsumer) {
