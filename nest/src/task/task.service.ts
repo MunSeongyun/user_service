@@ -7,12 +7,12 @@ export class TaskService {
     constructor(
         private schedulerRegistry:SchedulerRegistry
     ){
-        const date = new Date()
-        this.addCronJob(date.getMilliseconds())
+        
+        this.addCronJob()
     }
 
-    addCronJob(number:number){
-        const name = `cronSample${number}`
+    addCronJob(){
+        const name = `cronSample`
         const job = new CronJob(CronExpression.EVERY_SECOND,()=>{
             console.error(`run ${name}`)
         })

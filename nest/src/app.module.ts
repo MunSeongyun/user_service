@@ -31,7 +31,7 @@ import { TaskService } from './task/task.service';
     BatchModule
   ],
   controllers: [],
-  providers: [TaskService],
+  providers: [],
 })
 export class AppModule implements NestModule{
   configure(consumer: MiddlewareConsumer) {
