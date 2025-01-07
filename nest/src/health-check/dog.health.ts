@@ -11,7 +11,6 @@ export class DogHealthIndicator extends HealthIndicator{
         private data:DataSource
     ){
         super();
-        
     }
     
     async isHealthy(key:string){
